@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VLCDisposeError.Views.VideoPlayerPage"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit" 
+             xmlns:viewmodels="clr-namespace:VLCDisposeError.ViewModels" xmlns:vlc="clr-namespace:LibVLCSharp.Forms.Shared;assembly=LibVLCSharp.Forms"
+             x:DataType="viewmodels:VideoPlayerViewModel">
+
+
+    <ContentPage.BindingContext>
+        <viewmodels:VideoPlayerViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid x:Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  Width="*"/>
+        </Grid.ColumnDefinitions>
+        <vlc:VideoView x:Name="VideoView" MediaPlayer="{Binding MediaPlayer}" MediaPlayerChanged="VideoView_MediaPlayerChanged" HeightRequest="300" WidthRequest="300"/>
+    </Grid>
+
+
+</ContentPage>
